@@ -1,4 +1,6 @@
 require 'capybara/rspec'
+require 'board'
+require 'ship'
 
 feature 'game preparation: ' do
   scenario 'player can place a ship' do
