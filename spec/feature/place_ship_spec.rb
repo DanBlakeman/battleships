@@ -3,7 +3,9 @@ require 'capybara/rspec'
 feature 'game preparation: ' do
   scenario 'player can place a ship' do
     board = Board.new
-    board.place_ship('A1')
-    expect(board.grid).to eq([['Ship']])
+    ship = Ship.new
+    location = 1
+    board.place(ship, location)
+    expect(board.get(location)).to eq(ship)
   end
 end
