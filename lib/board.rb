@@ -1,8 +1,9 @@
 class Board
   attr_reader :grid
   def initialize
-    @grid = {}
-    (:A..:J).each { |column| @grid[column] = Array.new(10) }
+    @grid = (:A..:J).inject({}) do |hash, key|
+      hash.merge(key => Array.new(10))
+    end
   end
 
   def place(ship, column, row)
