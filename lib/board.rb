@@ -1,7 +1,13 @@
 class Board
-  def place(arg1, arg2)
+  def initialize
+    @board = Hash.new('empty')
   end
 
-  def get(arg1)
+  def place(ship, location)
+    @board[location] = ship
+  end
+
+  def get(location)
+    @board[location]
   end
 end
