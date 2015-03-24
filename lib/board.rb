@@ -11,8 +11,8 @@ class Board
     @grid[column][row] = ship
   end
 
-  def get(location)
-    @grid[location]
+  def get(column, row)
+    @board[column][row]
   end
 
   private
