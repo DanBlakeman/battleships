@@ -13,6 +13,7 @@ As a player
 So that I can prepare for the game
 I would like to place a ship in a board location
 
+**board_spec**
 As a player
 So that I can play a game thats fun
 I would like to play on a 10x10 grid
@@ -50,3 +51,5 @@ I would like to have a range of ship sizes to choose from
 As a player
 So that I can create a layout of ships to fox my opponent
 I would like to be able to choose the directions my ships face in
+
+NOTE: Firing in the same place twice should be checked!
