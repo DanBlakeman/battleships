@@ -1,13 +1,30 @@
 class Board
+  attr_reader :grid
   def initialize
-    @board = []
+    @grid = {}
+    (:A..:J).each { |column| @grid[column] = Array.new(10) }
   end
 
-  def place(ship, location)
-    @board[location] = ship
+  def place(ship, column, row)
+    fail 'Invalid Location' unless valid_input?(column, row)
+    @grid[column][row] = ship
   end
 
   def get(location)
-    @board[location]
+    @grid[location]
+  end
+
+  private
+
+  def valid_column?(column)
+    (:A..:J).include?(column)
+  end
+
+  def valid_row?(row)
+    (0..9).include?(row)
+  end
+
+  def valid_input?(column, row)
+    valid_column?(column) && valid_row?(row)
   end
 end
