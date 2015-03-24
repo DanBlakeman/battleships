@@ -1,6 +1,6 @@
 class Board
   def initialize
-    @board = Hash.new('empty')
+    @board = []
   end
 
   def place(ship, location)
