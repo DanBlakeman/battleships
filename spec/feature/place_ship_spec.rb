@@ -17,7 +17,7 @@ feature 'game preparation: ' do
     expect { board.place(ship, :A, 10) }.to raise_error 'Invalid Location'
   end
 
-  scenario 'ships cannot overlap other ships' do
+  scenario 'ships cannot overlap' do
     board.place(ship, :A, 1)
     expect { board.place(ship, :A, 1) }.to raise_error 'Ships Cannot Overlap'
   end
