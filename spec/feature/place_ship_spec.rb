@@ -6,7 +6,7 @@ feature 'game preparation: ' do
   let(:board) { Board.new }
   let(:ship) { Ship.new }
 
-  xscenario 'player can place a ship' do
+  scenario 'player can place a ship' do
     location = :A, 1
     board.place(ship, *location)
     expect(board.get(*location)).to eq(ship)
