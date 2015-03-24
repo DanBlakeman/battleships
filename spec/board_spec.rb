@@ -1,8 +1,8 @@
 require 'board'
 
 describe Board do
-  it '#get should return ship at location' do
-    location = :C, 1
+  location = :C, 1
+  it '#get should return ship at loc' do
     subject.place(:ship, *location)
     expect(subject.get(*location)).to eq(:ship)
   end
@@ -29,5 +29,12 @@ describe Board do
     location = :C, 1
     subject.fire(*location)
     expect(subject.get(*location)).to eq(:hit)
+  end
+
+  it 'raises an error when trying to overlap ships' do
+    subject.place(:ship, *location)
+    expect do
+      subject.place(:ship, *location)
+    end.to raise_error 'Ships Cannot Overlap'
   end
 end
