@@ -24,4 +24,10 @@ describe Board do
   it 'does not allow values outside of row and column range' do
     expect { subject.place(:ship, :P, 10) }.to raise_error 'Invalid Location'
   end
+
+  it 'can fire at a location' do
+    location = :C, 1
+    subject.fire(*location)
+    expect(subject.get(*location)).to eq(:hit)
+  end
 end

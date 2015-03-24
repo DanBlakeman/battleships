@@ -8,11 +8,15 @@ class Board
 
   def place(ship, column, row)
     fail 'Invalid Location' unless valid_input?(column, row)
-    @grid[column][row] = ship
+    grid[column][row] = ship
   end
 
   def get(column, row)
-    @grid[column][row]
+    grid[column][row]
+  end
+
+  def fire(column, row)
+    grid[column][row] = :hit
   end
 
   private
