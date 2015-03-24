@@ -12,7 +12,7 @@ class Board
   end
 
   def get(column, row)
-    @board[column][row]
+    @grid[column][row]
   end
 
   private
