@@ -14,5 +14,6 @@ feature 'game preparation: ' do
 
   scenario 'ship cannnot be place outside of the board' do
     expect { board.place(ship, 0) }.to raise_error 'Invalid Location'
+    expect { board.place(ship, 101) }.to raise_error 'Invalid Location'
   end
 end
