@@ -8,6 +8,7 @@ class Board
 
   def place(ship, column, row)
     fail 'Invalid Location' unless valid_input?(column, row)
+    fail 'Ships Cannot Overlap' unless @grid[column][row].nil?
     @grid[column][row] = ship
   end
 
