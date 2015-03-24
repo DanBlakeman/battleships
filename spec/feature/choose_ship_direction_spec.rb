@@ -13,3 +13,9 @@ feature 'create layout of ships' do
     expect(board[location..location + ship.size - 1].count(ship)).to eq size
   end
 end
+
+
+a[1][2][3]
+b[1][2][3]
+c[1][2][3]
+
